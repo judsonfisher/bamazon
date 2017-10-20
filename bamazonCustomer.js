@@ -82,7 +82,7 @@ function order(id, remaining, price) {
 		  }
 		], function(err, results) {
 			if (err) throw err;
-			console.log("Thank you for shopping at Bamazon! Your total final price is: " + price);
+			console.log("Thank you for shopping at Bamazon! Your total final price is: $" + price);
 			connection.end();
 	});
 };

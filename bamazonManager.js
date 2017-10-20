@@ -166,5 +166,3 @@ function newProduct() {
 			});
 		});
 };
-
-// if add new product, will send to new inquiere function and then run through series of questions relating to columns

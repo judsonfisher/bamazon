@@ -59,13 +59,15 @@ var checkQuantity = function(choice, quantity){
 		var usedId = results[0].item_id;
 		var desiredQuantity = quantity;
 		var price = results[0].price;
-		var realQuantity = results[0].stock_quantity;
+		var realQuantity = results[0].stock_quantity; 
 		if (desiredQuantity > realQuantity) {
 			console.log('Insufficient Quantity!');
 			return start();
 		} else if (desiredQuantity <= realQuantity) {
 			realQuantity -= desiredQuantity;
-			orderTotal = price * desiredQuantity;
+			var orderTotal = price * desiredQuantity;
+			var newSales = results[0].product_sales + orderTotal;
+			updateSales(usedId, newSales);
 			order(usedId, realQuantity, orderTotal);
 		};
 	});
@@ -84,5 +86,19 @@ function order(id, remaining, price) {
 			if (err) throw err;
 			console.log("Thank you for shopping at Bamazon! Your total final price is: $" + price);
 			connection.end();
+	});
+};
+
+function updateSales(id, sales) {
+	connection.query("UPDATE products SET ? WHERE ?", 
+		[
+		  { 
+		  	product_sales: sales 
+		  },
+		  { 
+		  	item_id: id 
+		  }
+		], function(err, results) {
+			if (err) throw err;
 	});
 };

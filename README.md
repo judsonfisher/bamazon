@@ -1,7 +1,7 @@
 # bamazon
 repo for my bamazon homework
 
-# Link to Bamazon walkthrough: https://drive.google.com/file/d/0B1to1EBtRiiwX3JtMlFwNG0yMGc/view?usp=sharing
+# Link to Bamazon walkthrough: [Click Here](https://drive.google.com/file/d/0B1to1EBtRiiwX3JtMlFwNG0yMGc/view?usp=sharing)
 
 # Challenges completed:
 1. Bamazon Customer
